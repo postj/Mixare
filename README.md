@@ -1,1 +1,1 @@
-Eclipse Test
+http://sashageekette.wordpress.com/2012/12/02/getting-started-with-mixare-on-eclipse/
