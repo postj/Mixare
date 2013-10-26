@@ -31,23 +31,14 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		ctx = this;
-		if(arePluginsAvailable() && isDecisionRemembered()){
-			showDialog();
-		}else{
-			if(getRememberedDecision()){ 		//yes button
-				startActivity(new Intent(ctx, PluginLoaderActivity.class));
-				finish();
-			} else{								//no button
-				startActivity(new Intent(ctx, MixView.class));
-				finish();
-			}
-		}
+		startActivity(new Intent(ctx, MixView.class));
+		finish();		
 	}	
 
 	/**
 	 * Shows a dialog
 	 */
-	public void showDialog() {
+	/*public void showDialog() {
 		final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 
 		dialog.setTitle(R.string.launch_plugins);
@@ -74,15 +65,15 @@ public class MainActivity extends Activity {
 		});
 
 		dialog.show();
-	}
+	}*/
 	
-	private void processCheckbox(boolean loadplugin, CheckBox checkBox){
+	/*private void processCheckbox(boolean loadplugin, CheckBox checkBox){
 		if(checkBox.isChecked()){
 			SharedPreferences sharedPreferences = getSharedPreferences(usePluginsPrefs, MODE_PRIVATE);
 			Editor editor = sharedPreferences.edit();
 			editor.putBoolean(usePluginsKey, loadplugin);
 			editor.commit();
 		}
-	}
+	}*/
 	
 }
